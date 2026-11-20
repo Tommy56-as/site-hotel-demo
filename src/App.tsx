@@ -13,6 +13,7 @@ import { RoomCatalog } from './components/RoomCatalog';
 import { ExperiencesSection } from './components/ExperiencesSection';
 import { Footer } from './components/Footer';
 import { getStoredAdminSession, saveAdminSession } from './utils/auth';
+import { resolveHotelImageUrl } from './utils/images';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
@@ -50,8 +51,13 @@ export default function App() {
   const [rooms, setRooms] = useState<Room[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_CUSTOM_ROOMS);
-      const customRooms = saved ? JSON.parse(saved) : [];
-      return [...customRooms, ...ROOMS_DATA];
+      const customRooms: Room[] = saved ? JSON.parse(saved) : [];
+      const roomsWithResolvedImages = customRooms.map((room) => ({
+        ...room,
+        image: resolveHotelImageUrl(room.image),
+        gallery: (room.gallery ?? []).map(resolveHotelImageUrl),
+      }));
+      return [...roomsWithResolvedImages, ...ROOMS_DATA];
     } catch {
       return ROOMS_DATA;
     }

@@ -6,6 +6,7 @@ import { getStoredAdminUsers, saveAdminUsers, getRoleLabel, saveAdminSession } f
 import { getWhatsAppConfirmationLink, getGmailWebLink } from '../utils/confirmation';
 import { InvoiceView } from './InvoiceView';
 import { Logo } from './Logo';
+import { HOTEL_IMAGES } from '../utils/images';
 import {
   Calendar,
   MapPin,
@@ -109,9 +110,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
     { id: string; url: string; name: string }[]
   >([]);
   const [primaryCoverIndex, setPrimaryCoverIndex] = useState<number>(0);
-  const [selectedImagePreset, setSelectedImagePreset] = useState<string>(
-    '/src/assets/images/room_kribi_ocean_1793714394549.jpg'
-  );
+  const [selectedImagePreset, setSelectedImagePreset] = useState<string>(HOTEL_IMAGES.kribi);
   const [customImageUrl, setCustomImageUrl] = useState<string>('');
   const [formSuccessMessage, setFormSuccessMessage] = useState<string | null>(null);
   const [formErrorMessage, setFormErrorMessage] = useState<string | null>(null);
@@ -130,23 +129,23 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
   const imagePresets = [
     {
       label: 'Kribi — Océan & Plage',
-      url: '/src/assets/images/room_kribi_ocean_1793714394549.jpg',
+      url: HOTEL_IMAGES.kribi,
     },
     {
       label: 'Douala — Estuaire & Verrière',
-      url: '/src/assets/images/room_douala_waterfront_1793714395315.jpg',
+      url: HOTEL_IMAGES.douala,
     },
     {
       label: 'Yaoundé — Collines de Bastos',
-      url: '/src/assets/images/room_yaounde_palace_1793714396103.jpg',
+      url: HOTEL_IMAGES.yaounde,
     },
     {
       label: 'Limbé — Villa Volcanique',
-      url: '/src/assets/images/room_limbe_bungalow_1793714396592.jpg',
+      url: HOTEL_IMAGES.limbe,
     },
     {
       label: 'Terrasse Panoramique Kribi',
-      url: '/src/assets/images/hero_cameroon_luxury_1793714393134.jpg',
+      url: HOTEL_IMAGES.hero,
     },
   ];
 

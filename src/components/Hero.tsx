@@ -3,6 +3,7 @@ import { Search, MapPin, Calendar, Users, ShieldCheck, CreditCard, ChevronDown }
 import { Language, DestinationId } from '../types';
 import { translations } from '../utils/i18n';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { HOTEL_IMAGES } from '../utils/images';
 
 interface HeroProps {
   language: Language;
@@ -132,7 +133,7 @@ export const Hero: React.FC<HeroProps> = ({
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                src="/src/assets/images/hero_cameroon_luxury_1793714393134.jpg"
+                src={HOTEL_IMAGES.hero}
                 alt="Terrasse privée d'exception surplombant l'océan Atlantique à Kribi"
                 className="w-full h-[380px] sm:h-[470px] object-cover transition-transform duration-700 ease-out will-change-transform"
                 referrerPolicy="no-referrer"

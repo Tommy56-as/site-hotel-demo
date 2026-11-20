@@ -3,6 +3,7 @@ import { Language, DestinationId } from '../types';
 import { translations } from '../utils/i18n';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { HOTEL_IMAGES } from '../utils/images';
 
 interface DestinationsPreviewProps {
   language: Language;
@@ -21,7 +22,7 @@ export const DestinationsPreview: React.FC<DestinationsPreviewProps> = ({
       name: 'Kribi',
       tagline: t.destinations.kribi,
       desc: t.destinations.kribiDesc,
-      image: '/src/assets/images/room_kribi_ocean_1793714394549.jpg',
+      image: HOTEL_IMAGES.kribi,
       region: 'Littoral Atlantique · Sud Cameroun',
     },
     {
@@ -29,7 +30,7 @@ export const DestinationsPreview: React.FC<DestinationsPreviewProps> = ({
       name: 'Douala',
       tagline: t.destinations.douala,
       desc: t.destinations.doualaDesc,
-      image: '/src/assets/images/room_douala_waterfront_1793714395315.jpg',
+      image: HOTEL_IMAGES.douala,
       region: 'Estuaire du Wouri · Bonanjo',
     },
     {
@@ -37,7 +38,7 @@ export const DestinationsPreview: React.FC<DestinationsPreviewProps> = ({
       name: 'Yaoundé',
       tagline: t.destinations.yaounde,
       desc: t.destinations.yaoundeDesc,
-      image: '/src/assets/images/room_yaounde_palace_1793714396103.jpg',
+      image: HOTEL_IMAGES.yaounde,
       region: 'Mont Fébé · Bastos Diplomatique',
     },
     {
@@ -45,7 +46,7 @@ export const DestinationsPreview: React.FC<DestinationsPreviewProps> = ({
       name: 'Limbé',
       tagline: t.destinations.limbe,
       desc: t.destinations.limbeDesc,
-      image: '/src/assets/images/room_limbe_bungalow_1793714396592.jpg',
+      image: HOTEL_IMAGES.limbe,
       region: 'Baie d’Ambas · Sable Noir Volcanique',
     },
   ];
