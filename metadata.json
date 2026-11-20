@@ -1,0 +1,6 @@
+{
+  "name": "Mboa Luxury Collection — Cameroun",
+  "description": "Plateforme de réservation et d'hôtellerie de luxe au Cameroun : suites et villas d'exception à Kribi, Douala, Yaoundé et Limbé avec simulation de paiement Mobile Money et facturation officielle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
